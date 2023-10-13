@@ -82,7 +82,7 @@ package, so we installed it earlier.
 
 Now you should be all set to get started working with Github.
 
-## Using R to connect to the your repository.
+## Using R to connect to your repository.
 
 First create a repository on Github for your project.
 
