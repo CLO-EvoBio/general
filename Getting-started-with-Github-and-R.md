@@ -1,0 +1,108 @@
+Using Github
+================
+
+## Create a GitHub account
+
+If you don’t have a GitHub account yet, create one. Remember to activate
+the account by clicking on the email that you get from github.
+
+## Install Git
+
+Download and install Git: <https://git-scm.com/downloads> Follow your
+operating system’s normal installation process. Note: you will not see
+an application called Git listed but if the installation process
+completed it was likely successful.
+
+Eg. for a mac you’ll need to install homebrew: paste in terminal (NOT
+connected to BioHPC)
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+and then install git (also using terminal on mac):
+
+    brew install git
+
+## Now connect Git on your computer to Github using R/Rstudio:
+
+Installing packages
+
+There are several ways to configure Git, including through the command
+line. We will use the convenient use_git_config() function from the
+usethis R package (i.e. we’ll run the setup from R). We first need to
+install the usethis package. Type the following in a new script in
+RStudio:
+
+## setup packages
+
+    install.packages("usethis")
+    library(usethis)
+
+    #When usethis is successfully attached, you won’t get any feedback in the Console. So unless you get an error, this worked for you.
+
+## use_git_config function with your username and email as arguments
+
+    use_git_config(user.name = "your_username", user.email = "username@example.org")
+
+    #note: this is your github user name and email associated with github.
+
+## Entering a GitHub Personal Access Token (PAT)
+
+We will first need to create a PAT on the Github website. Make sure
+you’re signed into your GitHub account in a web browser and that you
+have verified the email address associated with your account.
+
+In your Rstudio console type the following:
+
+    create_github_token() 
+
+    #This will take you to a pre-filled form online to create a new PAT.
+
+On the website:
+
+- Go ahead and just stick with their selected defaults.
+
+- Give the token a descriptive name (in the NOTE field), because one day
+  you might have multiple PATs, e.g., one that’s configured on your main
+  work computer and another that you use from a secondary computer.
+
+- Once you’ve added a name in the NOTE field, click “Generate token”.
+
+- You will get a code - As the page says, you must store this token
+  somewhere, because you’ll never be able to see it again, once you
+  leave that page or close the window.
+
+## Put your PAT into the Git credential store
+
+There are many ways to get your credential into the Git store. Here, we
+will use the gitcreds package, which is a dependency of the usethis
+package, so we installed it earlier.
+
+    library(gitcreds) 
+    gitcreds_set()
+
+Now you should be all set to get started working with Github.
+
+## Using R to connect to the Hubbard-Brook-Bird-Research/btbw-parentage Github.
+
+First go to the Github page for this project:
+<https://github.com/Hubbard-Brook-Bird-Research/btbw-parentage>
+
+You should see a green “code” button. Click this button and copy the
+https url.
+
+In RStudio: - Create a new project in Rstudio
+
+- Under Create Project select “Version Control”
+
+- Now select “Git”
+
+- In repository url paste the url you just copied from Github
+
+- In project directory name paste the repository name exactly as it is
+  on Github (in this case btbw-parentage)
+
+- Choose where you would like to store this on your computer - Click
+  create “Create Project”.
+
+This should open a new project and populate it with the information
+already on Github.
