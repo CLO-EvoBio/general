@@ -1,4 +1,4 @@
-Using Github
+Using Github with R studio
 ================
 
 ## Create a GitHub account

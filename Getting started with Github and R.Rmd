@@ -1,5 +1,5 @@
 ---
-title: "Using Github"
+title: "Using Github with R studio"
 output: github_document
 ---
 
