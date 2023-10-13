@@ -82,10 +82,9 @@ package, so we installed it earlier.
 
 Now you should be all set to get started working with Github.
 
-## Using R to connect to the Hubbard-Brook-Bird-Research/btbw-parentage Github.
+## Using R to connect to the your repository.
 
-First go to the Github page for this project:
-<https://github.com/Hubbard-Brook-Bird-Research/btbw-parentage>
+First create a repository on Github for your project.
 
 You should see a green “code” button. Click this button and copy the
 https url.
